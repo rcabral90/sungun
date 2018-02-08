@@ -2,21 +2,22 @@ import React, { Component } from 'react';
 import { Alert } from 'react-bootstrap';
 import logo from './logo.svg';
 import './App.css';
+import MuscleGroups from './Components/MuscleGroups'
 
 class App extends Component {
 
   state = {
-    response: ''
+    response: {}
   };
 
   componentDidMount() {
     this.callApi()
-      .then(res => this.setState({ response: res.express }))
+      .then(res => this.setState({ response: res.express}))
       .catch(err => console.log(err));
   }
 
   callApi = async () => {
-    const response = await fetch('/api/hello');
+    const response = await fetch('/api/getAllWorkouts');
     const body = await response.json();
 
     if (response.status !== 200) throw Error(body.message);
@@ -35,9 +36,13 @@ class App extends Component {
           <Alert bsStyle="warning">
             <strong>Holy guacamole!</strong> Best check yo self, you're not looking too
             good.
-          </Alert>;
-          {this.state.response}
+          </Alert>
+          {JSON.stringify(this.state.response)}
         </p>
+
+        <MuscleGroups/>
+
+
       </div>
     );
   }
