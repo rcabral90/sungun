@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Alert } from 'react-bootstrap';
 import logo from './logo.svg';
 import './App.css';
 
@@ -31,6 +32,10 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
+          <Alert bsStyle="warning">
+            <strong>Holy guacamole!</strong> Best check yo self, you're not looking too
+            good.
+          </Alert>;
           {this.state.response}
         </p>
       </div>
