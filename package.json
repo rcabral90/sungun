@@ -9,7 +9,10 @@
   "dependencies": {
     "express": "^4.16.2",
     "mongodb": "^3.0.2",
-    "react-bootstrap": "^0.32.1"
+    "react-bootstrap": "^0.32.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.0"
   },
   "devDependencies": {
     "concurrently": "^3.5.0"
