@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "express": "^4.16.2",
+    "mongodb": "^3.0.2",
     "nodemon": "^1.15.1",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
@@ -15,7 +16,7 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0",
     "react-scroll-to-component": "^1.0.2",
-    "mongodb": "^3.0.2"
+    "send": "^0.16.2"
   },
   "devDependencies": {
     "concurrently": "^3.5.0"

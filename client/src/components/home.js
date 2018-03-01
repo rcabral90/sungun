@@ -1,11 +1,11 @@
 import React from 'react';
 import {Jumbotron, Button} from 'react-bootstrap'
-import Top_nav from './navigation/top_nav'
+import TopNav from './navigation/TopNav'
 
 const Home = (props) => {
     return (
         <div>
-            <Top_nav/>
+            <TopNav/>
             <Jumbotron id="main">
                 <h1>SunGun</h1>
                 <p>
