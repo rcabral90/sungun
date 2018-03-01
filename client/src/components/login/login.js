@@ -1,5 +1,5 @@
 import React from 'react'
-import {FormGroup, ControlLabel, FormControl, Button, Grid, Row, Col} from 'react-bootstrap'
+import {FormGroup, FormControl, Button, Grid, Row, Col} from 'react-bootstrap'
 
 class Form extends React.Component {
     constructor(props, context) {
@@ -52,7 +52,7 @@ class Form extends React.Component {
 
                         <FormControl.Feedback/>
 
-                        <Button bsStyle="primary">Create Account</Button>
+                        <Button bsStyle="primary">Create Account</Button> <a href="">Forgot Password?</a>
                     </FormGroup>
                 </form>
                 </Col>
