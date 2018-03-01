@@ -1,6 +1,6 @@
 import React from 'react';
 import {Jumbotron, Button} from 'react-bootstrap'
-import TopNav from './navigation/TopNav'
+import TopNav from './navigation/topNav'
 
 const Home = (props) => {
     return (
