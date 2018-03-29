@@ -35,6 +35,7 @@ const TopNav = () => {
                             <MenuItem eventKey={1.1}>Recent</MenuItem>
                             <MenuItem eventKey={1.2}>Favorites</MenuItem>
                             <MenuItem eventKey={1.3}>All</MenuItem>
+                            <MenuItem eventKey={1.4} href="/routines">Routines</MenuItem>
                             <MenuItem divider/>
                             <MenuItem eventKey={1.4}>Create New</MenuItem>
                         </NavDropdown>
