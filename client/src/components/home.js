@@ -9,7 +9,6 @@ const test_array = [{link:'login',name:'hello'},{link:'login',name:'hello'}];
 
 class Home extends React.Component{
   render(){
-    this._onChange("hi")
     return (
         <div>
             <TopNav/>
