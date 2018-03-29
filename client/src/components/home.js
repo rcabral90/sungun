@@ -2,17 +2,12 @@ import React from 'react';
 import {Jumbotron} from 'react-bootstrap'
 import TopNav from './navigation/topNav'
 import ListWorkouts from './listing/listWorkouts'
-import { activateGeod } from '../redux'
 import {connect} from 'react-redux'
 
 
 const test_array = [{link:'login',name:'hello'},{link:'login',name:'hello'}];
 
 class Home extends React.Component{
-  _onChange = (value) => {
-    this.props.dispatch(activateGeod(value))
-  }
-
   render(){
     this._onChange("hi")
     return (
