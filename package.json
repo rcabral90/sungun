@@ -5,7 +5,8 @@
     "install-all": "yarn install && cd client && yarn install",
     "client": "cd client && yarn start",
     "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "prod": "concurrently --kill-others-on-fail \"node server\" \"cd client && PORT=80 react-scripts start\""
   },
   "dependencies": {
     "express": "^4.16.2",
