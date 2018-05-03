@@ -10,10 +10,22 @@ class Routines extends Component{
 		const wData = [
 			{
 				exercise: 'Name 1',
-				reps: '15',
-				sets: '3',
-				weight: '40',
-				rest: '3'
+				sets:[
+					{	
+						reps: '15',
+						weight: '40',
+						rest: '3'
+					},
+					{
+						reps: '12',
+						weight: '60',
+						rest: '2'
+					},
+					{
+						reps: '12',
+						weight: '60',
+						rest: '2'
+					}]
 			},
 			{
 				exercise: 'Name 2',
