@@ -13,34 +13,72 @@ class Routines extends Component{
 				sets:[
 					{	
 						reps: '15',
-						weight: '40',
+						weight: '60',
 						rest: '3'
 					},
 					{
 						reps: '12',
-						weight: '60',
+						weight: '90',
 						rest: '2'
 					},
 					{
 						reps: '12',
-						weight: '60',
+						weight: '20',
 						rest: '2'
 					}]
 			},
 			{
 				exercise: 'Name 2',
-				reps: '10',
-				sets:'4',
-				weight:'--',
-				rest: '2'
+				sets:[
+					{	
+						reps: '25',
+						weight: '40',
+						rest: '3'
+					},
+					{
+						reps: '20',
+						weight: '60',
+						rest: '2'
+					},
+					{
+						reps: '15',
+						weight: '60',
+						rest: '2'
+					}]
 			},
 			{
-				exercise: 'Name 3',
-				reps: '20',
-				sets:'1',
-				weight: '15',
-				rest: '--'
+				exercise: 'Name three',
+				sets:[
+					{	
+						reps: '10',
+						weight: '40',
+						rest: '3'
+					},
+					{
+						reps: '5',
+						weight: '60',
+						rest: '2'
+					},
+					{
+						reps: '3',
+						weight: '60',
+						rest: '2'
+					}]
 			}
+			// {
+			// 	exercise: 'Name 2',
+			// 	reps: '10',
+			// 	sets:'4',
+			// 	weight:'--',
+			// 	rest: '2'
+			// },
+			// {
+			// 	exercise: 'Name 3',
+			// 	reps: '20',
+			// 	sets:'1',
+			// 	weight: '15',
+			// 	rest: '--'
+			// }
 		]
 		const date = new Date();
 		const dateStr = date.toLocaleDateString();
@@ -54,20 +92,7 @@ class Routines extends Component{
 					Workout Sheet <small>{dateStr}</small>
 				</PageHeader>
 				<div className='container-fluid'>
-					<Table striped responsive condensed bordered hover>
-						<thead>
-							<tr>
-								<th className='text-center'>Exercise</th>
-								<th className='text-center'>Reps #</th>
-								<th className='text-center'>Sets #</th>
-								<th className='text-center'>Weight (lb.)</th>
-								<th className='text-center'>Rest Time</th>
-							</tr>
-						</thead>
-						<tbody>
-							{routinesList}
-						</tbody>
-					</Table>
+					{routinesList}
 				</div>
 			</div>
 		)
