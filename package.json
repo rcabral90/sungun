@@ -4,8 +4,9 @@
   "scripts": {
     "install-all": "yarn install && cd client && yarn install",
     "client": "cd client && yarn start",
+    "client-dev": "cd client && yarn start-dev",
     "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client-dev\"",
     "prod": "concurrently --kill-others-on-fail \"node server\" \"cd client && PORT=80 react-scripts start\""
   },
   "dependencies": {
