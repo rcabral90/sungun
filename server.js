@@ -1,43 +1,31 @@
 const express = require('express');
 const json = require('./resources/mock_data.json')
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://sungun:1burger@207.148.14.210:27017/";
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('sungun', 'postgres', '1burger', {
+  host: '207.148.14.210',
+  dialect: 'postgres',
+  operatorsAliases: false,
+  define: {
+    timestamps: false
+  }
+});
 
 const app = express();
 const port = process.env.PORT || 5000;
+
+const Muscles = sequelize.define('muscles', {
+  muscleid: { type: Sequelize.INTEGER, primaryKey: true },
+  muscle: Sequelize.TEXT
+})
 
 app.get('/api/hello', (req, res) => {
   res.send({ express: json.data });
 });
 
-app.get('/api/muscle', (req, res) => {
-	MongoClient.connect(url, function(err, db) {
-  		if (err) console.log(err);
-		var dbo = db.db("sungun");
-		var data = dbo.collection('tblMuscles').find().toArray(function(err, items){
-			res.send(items);
-		});
-	});
-});
-
-app.get('/api/excercise', (req, res) => {
-	MongoClient.connect(url, function(err, db) {
-  		if (err) console.log(err);
-		var dbo = db.db("sungun");
-		var data = dbo.collection('tblExcercise').find().toArray(function(err, items){
-			res.send(items);
-		});
-	});
-});
-
-app.get('/api/excerciseLookup', (req, res) => {
-	MongoClient.connect(url, function(err, db) {
-  		if (err) console.log(err);
-		var dbo = db.db("sungun");
-		var data = dbo.collection('tblExcersiseLookup').find().toArray(function(err, items){
-			res.send(items);
-		});
-	});
-});
+app.get('/api/allMuscles', (req, res) => {
+  Muscles.findAll().then(muscle => {
+    res.send({ muscle })
+  })
+})
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
