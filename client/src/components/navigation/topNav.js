@@ -34,6 +34,7 @@ const TopNav = () => {
                         <NavDropdown eventKey={1} title="My Workouts" id="myWorkOutsMenu">
                             <MenuItem eventKey={1.1}>Recent</MenuItem>
                             <MenuItem eventKey={1.2}>Favorites</MenuItem>
+                            <MenuItem eventKey={1.5} href='/user/completed'>Completed</MenuItem>
                             <MenuItem eventKey={1.3}>All</MenuItem>
                             <MenuItem eventKey={1.4} href="/routines">Routines</MenuItem>
                             <MenuItem divider/>
