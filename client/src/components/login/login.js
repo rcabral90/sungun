@@ -1,5 +1,5 @@
 import React from 'react'
-import {FormGroup, FormControl, Button, Grid, Row, Col} from 'react-bootstrap'
+import {FormGroup, FormControl, Button, Grid, Row, Col, Label} from 'react-bootstrap'
 import { connect } from 'react-redux';
 import { login, callLogin } from '../../redux'
 
@@ -36,36 +36,49 @@ class Form extends React.Component {
                 <Row>
                 <Col xsOffset={1} xs={10} smOffset={3} sm={6}>
 
-                <form className="loginForm" onSubmit={this.onSubmit}>
-                    <FormGroup
-                        className="loginInput"
-                        controlId="formBasicText"
-                        validationState={this.getValidationState()}>
-                        <h2>Login</h2>
-                        
-                        <FormControl
+                    <form className="loginForm" onSubmit={this.onSubmit}>
+                        <FormGroup
                             className="loginInput"
-                            type="text"
-                            value={this.state.name}
-                            placeholder="name"
-                            onChange={e => this.setState({email: e.target.value})}/>
+                            controlId="formBasicText"
+                            validationState={this.getValidationState()}>
+                            <h2>Login</h2>
+                            
+                            <FormControl
+                                className="loginInput"
+                                type="text"
+                                value={this.state.name}
+                                placeholder="name"
+                                onChange={e => this.setState({email: e.target.value})}/>
 
-                        <FormControl
-                            className="loginInput"
-                            type="text"
-                            value={this.state.password}
-                            placeholder="password"
-                            onChange={e => this.setState({password: e.target.value})}/>
+                            <FormControl
+                                className="loginInput"
+                                type="text"
+                                value={this.state.password}
+                                placeholder="password"
+                                onChange={e => this.setState({password: e.target.value})}/>
 
-                        <FormControl.Feedback/>
-                        <Button bsStyle="primary" onClick={this.onSubmit}>Login</Button>
-                    </FormGroup>
-                </form>
+                            <FormControl.Feedback/>
+                            <Button bsStyle="success" onClick={this.onSubmit}>Login</Button>
+                        </FormGroup>
+                        { isLoginPending && <div>Please wait...</div> }
+                        { isLoginSuccess && <div>Success.</div> }
+                        { loginError && <div>{loginError.message}</div> }
+                    </form>
+
+                    <Col xs={12} smOffset={1} sm={10}>
+                    <Row>
+                        <Col xs={12} sm={6} className='text-center'>
+                            <Label bsStyle='warning'>Forgot Account?</Label>
+                        </Col>
+                        <Col xs={12} sm={6} className='text-center'>
+                            <Label bsStyle='info'>New User</Label>
+                        </Col>
+                    </Row>
+                    </Col>
+                    
                 </Col>
                 </Row>
-                { isLoginPending && <div>Please wait...</div> }
-                { isLoginSuccess && <div>Success.</div> }
-                { loginError && <div>{loginError.message}</div> }
+                
             </Grid>
         );
     }
